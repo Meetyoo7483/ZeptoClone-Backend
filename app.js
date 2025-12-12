@@ -48,13 +48,19 @@ app.use((err, req, res, next) => {
 // }
 
 //4000,5000,8080
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => {
-        console.log("Database Connected!");
+// mongoose.connect(process.env.MONGO_URI)
+//     .then(() => {
+//         console.log("Database Connected!");
 
-        app.listen(4000, () => {
-            console.log("Server was running 4000")
-        })
-    }).catch((error) => {
-        console.log(error.message)
-    })
+//         app.listen(4000, () => {
+//             console.log("Server was running 4000")
+//         })
+//     }).catch((error) => {
+//         console.log(error.message)
+//     })
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("Database Connected!"))
+  .catch((error) => console.log(error.message))
+
+module.exports = app
