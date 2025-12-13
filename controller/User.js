@@ -128,7 +128,7 @@ function generateOTP() {
 
 exports.SendOtp = async (req, res, next) => {
   try {
-    const { email } = req.body
+    const { email } = req.body;
 
     if (!email) {
       return next(new ErrorHandler('Email is requried', StatusCodes.BAD_REQUEST))
