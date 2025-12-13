@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
 const app = express()
 
 const options = {
-    origin: ['http://localhost:3000', 'http://localhost:3001', 'https://zepto-clone-frontend.vercel.app/'],
+    origin: ['http://localhost:3000', 'http://localhost:3001', 'https://zepto-clone-frontend.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true 
 }
