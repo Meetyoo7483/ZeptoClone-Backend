@@ -14,6 +14,7 @@ const options = {
 app.use(cors(options))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
 app.use(express.static(path.join(__dirname, 'assets')))
 
 const Admin = require('./routes/Admin')
