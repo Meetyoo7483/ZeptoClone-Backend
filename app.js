@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
 const app = express()
 
 const options = {
-    origin: ['http://localhost:3000', 'http://localhost:3001']
+    origin: ['http://localhost:3000', 'http://localhost:3001', 'https://zepto-clone-backend-aqqn.vercel.app/']
 }
 
 app.use(cors(options))
@@ -30,6 +30,11 @@ app.use((err, req, res, next) => {
         message: err.message
     })
 })
+
+app.listen(4000, ()=> {
+    console.log("server start 4000")
+})
+
 
 // const person = {
 //     name: 'Max',
