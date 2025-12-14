@@ -34,9 +34,9 @@ app.use((err, req, res, next) => {
     })
 })
 
-app.listen(4000, ()=> {
-    console.log("server start 4000")
-})
+// app.listen(4000, ()=> {
+//     console.log("server start 4000")
+// })
 
 
 // const person = {
@@ -69,7 +69,8 @@ app.listen(4000, ()=> {
 //     })
 
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("Database Connected!"))
-  .catch((error) => console.log(error.message))
-
-module.exports = app
+  .then(() => {
+    console.log("Database Connected!");
+    app.listen(4000, () => console.log("Server running on 4000"));
+  })
+  .catch((err) => console.log(err.message));
